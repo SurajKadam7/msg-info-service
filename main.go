@@ -10,11 +10,11 @@ import (
 
 	"github.com/go-kit/log"
 	"github.com/jackc/pgx/v5/pgxpool"
-	msginfosrv "github.com/suraj.kadam7/msg-info-srv/msginfo_srv"
-	"github.com/suraj.kadam7/msg-info-srv/msginfo_srv/service"
-	"github.com/suraj.kadam7/msg-info-srv/msginfo_srv/transport"
-	transporthttp "github.com/suraj.kadam7/msg-info-srv/msginfo_srv/transport/http"
-	"github.com/suraj.kadam7/msg-info-srv/repos/msginfo/postgres"
+	msginfosrv "github.com/suraj.kadam7/msg-info-service/msginfo_srv"
+	"github.com/suraj.kadam7/msg-info-service/msginfo_srv/service"
+	"github.com/suraj.kadam7/msg-info-service/msginfo_srv/transport"
+	transporthttp "github.com/suraj.kadam7/msg-info-service/msginfo_srv/transport/http"
+	"github.com/suraj.kadam7/msg-info-service/repos/msginfo/postgres"
 )
 
 func main() {
@@ -31,7 +31,7 @@ func main() {
 		defer client.Close()
 	}
 
-	logger := log.With(log.NewJSONLogger(os.Stdout), "service", "msg-info-srv")
+	logger := log.With(log.NewJSONLogger(os.Stdout), "service", "msg-info-service")
 
 	repo := postgres.New(client, "")
 	srv := msginfosrv.New(repo)

@@ -5,8 +5,8 @@ package service
 import (
 	"context"
 	log "github.com/go-kit/log"
-	model "github.com/suraj.kadam7/msg-info-srv/model"
-	service "github.com/suraj.kadam7/msg-info-srv/repos/msginfo"
+	model "github.com/suraj.kadam7/msg-info-service/model"
+	service "github.com/suraj.kadam7/msg-info-service/repos/msginfo"
 	"time"
 )
 

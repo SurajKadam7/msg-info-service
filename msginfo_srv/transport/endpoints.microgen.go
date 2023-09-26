@@ -14,6 +14,6 @@ type ManyToOneStreamEndpoint func(stream interface{}) error
 type EndpointsSet struct {
 	AddEndpoint    endpoint.Endpoint
 	DeleteEndpoint endpoint.Endpoint
-	GetEndpoint    endpoint.Endpoint
+	GetAllEndpoint endpoint.Endpoint
 	UpdateEndpoint endpoint.Endpoint
 }

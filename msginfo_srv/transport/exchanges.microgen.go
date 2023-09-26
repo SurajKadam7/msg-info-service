@@ -2,7 +2,7 @@
 
 package transport
 
-import model "github.com/suraj.kadam7/msg-info-srv/model"
+import model "github.com/suraj.kadam7/msg-info-service/model"
 
 type (
 	AddRequest struct {
@@ -19,11 +19,11 @@ type (
 	// Formal exchange type, please do not delete.
 	DeleteResponse struct{}
 
-	GetRequest struct {
+	GetAllRequest struct {
 		UserId int          `json:"user_id"`
 		Status model.Status `json:"status"`
 	}
-	GetResponse struct {
+	GetAllResponse struct {
 		Msgs []model.MsgInfo `json:"msgs"`
 	}
 

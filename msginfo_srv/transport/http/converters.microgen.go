@@ -7,7 +7,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	transport "github.com/suraj.kadam7/msg-info-srv/msginfo_srv/transport"
+	transport "github.com/suraj.kadam7/msg-info-service/msginfo_srv/transport"
 	"io"
 	"net/http"
 	"path"
@@ -39,8 +39,8 @@ func _Decode_Delete_Request(_ context.Context, r *http.Request) (interface{}, er
 	return &req, err
 }
 
-func _Decode_Get_Request(_ context.Context, r *http.Request) (interface{}, error) {
-	var req transport.GetRequest
+func _Decode_GetAll_Request(_ context.Context, r *http.Request) (interface{}, error) {
+	var req transport.GetAllRequest
 	err := json.NewDecoder(r.Body).Decode(&req)
 	return &req, err
 }
@@ -63,8 +63,8 @@ func _Decode_Delete_Response(_ context.Context, r *http.Response) (interface{}, 
 	return &resp, err
 }
 
-func _Decode_Get_Response(_ context.Context, r *http.Response) (interface{}, error) {
-	var resp transport.GetResponse
+func _Decode_GetAll_Response(_ context.Context, r *http.Response) (interface{}, error) {
+	var resp transport.GetAllResponse
 	err := json.NewDecoder(r.Body).Decode(&resp)
 	return &resp, err
 }
@@ -85,8 +85,8 @@ func _Encode_Delete_Request(ctx context.Context, r *http.Request, request interf
 	return CommonHTTPRequestEncoder(ctx, r, request)
 }
 
-func _Encode_Get_Request(ctx context.Context, r *http.Request, request interface{}) error {
-	r.URL.Path = path.Join(r.URL.Path, "get")
+func _Encode_GetAll_Request(ctx context.Context, r *http.Request, request interface{}) error {
+	r.URL.Path = path.Join(r.URL.Path, "get-all")
 	return CommonHTTPRequestEncoder(ctx, r, request)
 }
 
@@ -103,7 +103,7 @@ func _Encode_Delete_Response(ctx context.Context, w http.ResponseWriter, respons
 	return CommonHTTPResponseEncoder(ctx, w, response)
 }
 
-func _Encode_Get_Response(ctx context.Context, w http.ResponseWriter, response interface{}) error {
+func _Encode_GetAll_Response(ctx context.Context, w http.ResponseWriter, response interface{}) error {
 	return CommonHTTPResponseEncoder(ctx, w, response)
 }
 

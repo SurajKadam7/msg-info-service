@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
-	"github.com/suraj.kadam7/msg-info-srv/model"
-	"github.com/suraj.kadam7/msg-info-srv/repos/msginfo"
+	"github.com/suraj.kadam7/msg-info-service/model"
+	"github.com/suraj.kadam7/msg-info-service/repos/msginfo"
 )
 
 // @microgen http, logging, middleware
