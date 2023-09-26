@@ -36,7 +36,7 @@ func DeleteEndpoint(svc msginfosrv.Service) endpoint.Endpoint {
 func GetEndpoint(svc msginfosrv.Service) endpoint.Endpoint {
 	return func(arg0 context.Context, request interface{}) (interface{}, error) {
 		req := request.(*GetRequest)
-		res0, res1 := svc.Get(arg0, req.UserId, req.Status)
+		res0, res1 := svc.GetAll(arg0, req.UserId, req.Status)
 		return &GetResponse{Msgs: res0}, res1
 	}
 }

@@ -18,7 +18,7 @@ type Service interface {
 	Delete(ctx context.Context, userId int, msgId int) (err error)
 	// @http-method POST
 	// @http-path msginfo/all/
-	Get(ctx context.Context, userId int, status model.Status) (msgs []model.MsgInfo, err error)
+	GetAll(ctx context.Context, userId int, status model.Status) (msgs []model.MsgInfo, err error)
 	// @http-method PUT
 	// @http-path msginfo/
 	Update(ctx context.Context, userId int, msgId int, status model.Status) (err error)
@@ -66,7 +66,7 @@ func (s *service) Delete(ctx context.Context, userId int, msgId int) (err error)
 	return
 }
 
-func (s *service) Get(ctx context.Context, userId int, status model.Status) (msgs []model.MsgInfo, err error) {
+func (s *service) GetAll(ctx context.Context, userId int, status model.Status) (msgs []model.MsgInfo, err error) {
 	if userId <= 0 || int(status) < 0 {
 		return []model.MsgInfo{}, errors.New("wrong request")
 	}

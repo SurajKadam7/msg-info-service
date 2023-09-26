@@ -53,7 +53,7 @@ func (M loggingMiddleware) Delete(arg0 context.Context, arg1 int, arg2 int) (res
 	return M.next.Delete(arg0, arg1, arg2)
 }
 
-func (M loggingMiddleware) Get(arg0 context.Context, arg1 int, arg2 model.Status) (res0 []model.MsgInfo, res1 error) {
+func (M loggingMiddleware) GetAll(arg0 context.Context, arg1 int, arg2 model.Status) (res0 []model.MsgInfo, res1 error) {
 	defer func(begin time.Time) {
 		M.logger.Log(
 			"method", "Get",
@@ -66,7 +66,7 @@ func (M loggingMiddleware) Get(arg0 context.Context, arg1 int, arg2 model.Status
 			"err", res1,
 			"took", time.Since(begin))
 	}(time.Now())
-	return M.next.Get(arg0, arg1, arg2)
+	return M.next.GetAll(arg0, arg1, arg2)
 }
 
 func (M loggingMiddleware) Update(arg0 context.Context, arg1 int, arg2 int, arg3 model.Status) (res0 error) {
