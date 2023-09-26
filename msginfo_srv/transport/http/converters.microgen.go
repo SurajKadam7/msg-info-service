@@ -7,7 +7,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	transport "github.com/suraj.kadam7/msg-info-service/msginfo_srv/transport"
+	transport "github.com/SurajKadam7/msg-info-service/msginfo_srv/transport"
 	"io"
 	"net/http"
 	"path"

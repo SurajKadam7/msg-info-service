@@ -2,7 +2,7 @@
 
 package transport
 
-import model "github.com/suraj.kadam7/msg-info-service/model"
+import model "github.com/SurajKadam7/msg-info-service/model"
 
 type (
 	AddRequest struct {

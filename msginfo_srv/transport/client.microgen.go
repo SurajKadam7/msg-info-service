@@ -4,7 +4,7 @@ package transport
 
 import (
 	"context"
-	model "github.com/suraj.kadam7/msg-info-service/model"
+	model "github.com/SurajKadam7/msg-info-service/model"
 )
 
 func (set EndpointsSet) Add(arg0 context.Context, arg1 model.MsgInfo) (res0 int, res1 error) {

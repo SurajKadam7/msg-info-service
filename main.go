@@ -10,11 +10,11 @@ import (
 
 	"github.com/go-kit/log"
 	"github.com/jackc/pgx/v5/pgxpool"
-	msginfosrv "github.com/suraj.kadam7/msg-info-service/msginfo_srv"
-	"github.com/suraj.kadam7/msg-info-service/msginfo_srv/service"
-	"github.com/suraj.kadam7/msg-info-service/msginfo_srv/transport"
-	transporthttp "github.com/suraj.kadam7/msg-info-service/msginfo_srv/transport/http"
-	"github.com/suraj.kadam7/msg-info-service/repos/msginfo/postgres"
+	msginfosrv "github.com/SurajKadam7/msg-info-service/msginfo_srv"
+	"github.com/SurajKadam7/msg-info-service/msginfo_srv/service"
+	"github.com/SurajKadam7/msg-info-service/msginfo_srv/transport"
+	transporthttp "github.com/SurajKadam7/msg-info-service/msginfo_srv/transport/http"
+	"github.com/SurajKadam7/msg-info-service/repos/msginfo/postgres"
 )
 
 func main() {

@@ -3,8 +3,8 @@
 package transporthttp
 
 import (
+	transport "github.com/SurajKadam7/msg-info-service/msginfo_srv/transport"
 	httpkit "github.com/go-kit/kit/transport/http"
-	transport "github.com/suraj.kadam7/msg-info-service/msginfo_srv/transport"
 	"net/url"
 )
 

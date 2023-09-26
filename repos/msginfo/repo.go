@@ -3,7 +3,7 @@ package msginfo
 import (
 	"context"
 
-	"github.com/suraj.kadam7/msg-info-service/model"
+	"github.com/SurajKadam7/msg-info-service/model"
 )
 
 // @microgen logging, middleware

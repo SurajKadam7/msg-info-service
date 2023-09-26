@@ -3,9 +3,9 @@
 package transporthttp
 
 import (
+	transport "github.com/SurajKadam7/msg-info-service/msginfo_srv/transport"
 	http "github.com/go-kit/kit/transport/http"
 	mux "github.com/gorilla/mux"
-	transport "github.com/suraj.kadam7/msg-info-service/msginfo_srv/transport"
 	http1 "net/http"
 )
 

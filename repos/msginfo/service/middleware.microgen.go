@@ -2,7 +2,7 @@
 
 package service
 
-import service "github.com/suraj.kadam7/msg-info-service/repos/msginfo"
+import service "github.com/SurajKadam7/msg-info-service/repos/msginfo"
 
 // Service middleware (closure).
 type Middleware func(service.Repository) service.Repository

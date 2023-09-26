@@ -4,9 +4,9 @@ package service
 
 import (
 	"context"
+	model "github.com/SurajKadam7/msg-info-service/model"
+	service "github.com/SurajKadam7/msg-info-service/repos/msginfo"
 	log "github.com/go-kit/log"
-	model "github.com/suraj.kadam7/msg-info-service/model"
-	service "github.com/suraj.kadam7/msg-info-service/repos/msginfo"
 	"time"
 )
 

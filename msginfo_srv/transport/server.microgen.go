@@ -4,8 +4,8 @@ package transport
 
 import (
 	"context"
+	msginfosrv "github.com/SurajKadam7/msg-info-service/msginfo_srv"
 	endpoint "github.com/go-kit/kit/endpoint"
-	msginfosrv "github.com/suraj.kadam7/msg-info-service/msginfo_srv"
 )
 
 func Endpoints(svc msginfosrv.Service) EndpointsSet {
