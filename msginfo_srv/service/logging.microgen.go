@@ -4,9 +4,9 @@ package service
 
 import (
 	"context"
+	model "github.com/SurajKadam7/msg-info-service/model"
+	service "github.com/SurajKadam7/msg-info-service/msginfo_srv"
 	log "github.com/go-kit/log"
-	model "github.com/suraj.kadam7/msg-info-srv/model"
-	service "github.com/suraj.kadam7/msg-info-srv/msginfo_srv"
 	"time"
 )
 
@@ -56,13 +56,13 @@ func (M loggingMiddleware) Delete(arg0 context.Context, arg1 int, arg2 int) (res
 func (M loggingMiddleware) GetAll(arg0 context.Context, arg1 int, arg2 model.Status) (res0 []model.MsgInfo, res1 error) {
 	defer func(begin time.Time) {
 		M.logger.Log(
-			"method", "Get",
-			"message", "Get called",
-			"request", logGetRequest{
+			"method", "GetAll",
+			"message", "GetAll called",
+			"request", logGetAllRequest{
 				Status: arg2,
 				UserId: arg1,
 			},
-			"response", logGetResponse{Msgs: res0},
+			"response", logGetAllResponse{Msgs: res0},
 			"err", res1,
 			"took", time.Since(begin))
 	}(time.Now())
@@ -96,11 +96,11 @@ type (
 		UserId int
 		MsgId  int
 	}
-	logGetRequest struct {
+	logGetAllRequest struct {
 		UserId int
 		Status model.Status
 	}
-	logGetResponse struct {
+	logGetAllResponse struct {
 		Msgs []model.MsgInfo
 	}
 	logUpdateRequest struct {

@@ -3,9 +3,9 @@
 package transporthttp
 
 import (
+	transport "github.com/SurajKadam7/msg-info-service/msginfo_srv/transport"
 	http "github.com/go-kit/kit/transport/http"
 	mux "github.com/gorilla/mux"
-	transport "github.com/suraj.kadam7/msg-info-srv/msginfo_srv/transport"
 	http1 "net/http"
 )
 
@@ -25,9 +25,9 @@ func NewHTTPHandler(endpoints *transport.EndpointsSet, opts ...http.ServerOption
 			opts...))
 	mux.Methods("POST").Path("/msginfo/all/").Handler(
 		http.NewServer(
-			endpoints.GetEndpoint,
-			_Decode_Get_Request,
-			_Encode_Get_Response,
+			endpoints.GetAllEndpoint,
+			_Decode_GetAll_Request,
+			_Encode_GetAll_Response,
 			opts...))
 	mux.Methods("PUT").Path("/msginfo/").Handler(
 		http.NewServer(

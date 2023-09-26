@@ -4,7 +4,7 @@ package transport
 
 import (
 	"context"
-	model "github.com/suraj.kadam7/msg-info-srv/model"
+	model "github.com/SurajKadam7/msg-info-service/model"
 )
 
 func (set EndpointsSet) Add(arg0 context.Context, arg1 model.MsgInfo) (res0 int, res1 error) {
@@ -28,16 +28,16 @@ func (set EndpointsSet) Delete(arg0 context.Context, arg1 int, arg2 int) (res0 e
 	return res0
 }
 
-func (set EndpointsSet) Get(arg0 context.Context, arg1 int, arg2 model.Status) (res0 []model.MsgInfo, res1 error) {
-	request := GetRequest{
+func (set EndpointsSet) GetAll(arg0 context.Context, arg1 int, arg2 model.Status) (res0 []model.MsgInfo, res1 error) {
+	request := GetAllRequest{
 		Status: arg2,
 		UserId: arg1,
 	}
-	response, res1 := set.GetEndpoint(arg0, &request)
+	response, res1 := set.GetAllEndpoint(arg0, &request)
 	if res1 != nil {
 		return
 	}
-	return response.(*GetResponse).Msgs, res1
+	return response.(*GetAllResponse).Msgs, res1
 }
 
 func (set EndpointsSet) Update(arg0 context.Context, arg1 int, arg2 int, arg3 model.Status) (res0 error) {

@@ -3,8 +3,8 @@
 package transporthttp
 
 import (
+	transport "github.com/SurajKadam7/msg-info-service/msginfo_srv/transport"
 	httpkit "github.com/go-kit/kit/transport/http"
-	transport "github.com/suraj.kadam7/msg-info-srv/msginfo_srv/transport"
 	"net/url"
 )
 
@@ -22,10 +22,10 @@ func NewHTTPClient(u *url.URL, opts ...httpkit.ClientOption) transport.Endpoints
 			_Decode_Delete_Response,
 			opts...,
 		).Endpoint(),
-		GetEndpoint: httpkit.NewClient(
+		GetAllEndpoint: httpkit.NewClient(
 			"POST", u,
-			_Encode_Get_Request,
-			_Decode_Get_Response,
+			_Encode_GetAll_Request,
+			_Decode_GetAll_Response,
 			opts...,
 		).Endpoint(),
 		UpdateEndpoint: httpkit.NewClient(

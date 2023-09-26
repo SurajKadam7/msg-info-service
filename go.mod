@@ -1,4 +1,4 @@
-module github.com/suraj.kadam7/msg-info-srv
+module github.com/SurajKadam7/msg-info-service
 
 go 1.19
 
